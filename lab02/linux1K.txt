@@ -1,0 +1,51 @@
+
+}
+
+#ifdef CONFIG_SBUS
+static const struct of_device_id fore200e_sba_match[];
+static int fore200e_sba_probe(struct platform_device *op)
+{
+	const struct of_device_id *match;
+	struct fore200e *fore200e;
+	static int index = 0;
+	int err;
+
+	match = of_match_device(fore200e_sba_match, &op->dev);
+	if (!match)
+		return -EINVAL;
+
+	fore200e = kzalloc(sizeof(struct fore200e), GFP_KERNEL);
+	if (!fore200e)
+		return -ENOMEM;
+
+	fore200e->bus = &fore200e_sbus_ops;
+
+
+
+}
+
+static const struct of_device_id fore200e_sba_match[];
+static int fore200e_sba_probe(struct platform_device *op)
+{
+
+	match = of_match_device(fore200e_sba_match, &op->dev);
+	if (!match)
+
+#ifdef CONFIG_SBUS
+static const struct of_device_id fore200e_sba_match[];
+static int fore200e_sba_probe(struct platform_device *op)
+{
+	const struct of_device_id *match;
+	struct fore200e *fore200e;
+	static int index = 0;
+	int err;
+
+	match = of_match_device(fore200e_sba_match, &op->dev);
+	if (!match)
+		return -EINVAL;
+
+	fore200e = kzalloc(sizeof(struct fore200e), GFP_KERNEL);
+	if (!fore200e)
+		return -ENOMEM;
+
+	fore200e->bus = &fore200e_sbus_ops;
